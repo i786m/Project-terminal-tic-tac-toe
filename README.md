@@ -23,4 +23,4 @@ This is a small project that can be worked on in a group of 3 people. Once compl
 
 ![forks](tic-tac-toe-forks.jpg)
 
-Contributors: (Alexandru)[https://github.com/alexandru-pocovnicu], (Adnaan)[https://github.com/AdnaanA], (Imran)[https://github.com/i786m]
+Contributors: [Alexandru](https://github.com/alexandru-pocovnicu), [Adnaan](https://github.com/AdnaanA), [Imran](https://github.com/i786m)
