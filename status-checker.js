@@ -17,7 +17,11 @@ import { checkIfNoMovesLeft } from './board-printer.js';
     Return true if the player has made a move in all 3 squares in the row
     Otherwise, return false
 */
-function checkRow(board, player, rowNumber) {
+export function checkRow(board, player, rowNumber) {
+    if(rowNumber < 0 || rowNumber > 2) {
+        return false;
+    }
+    return board[rowNumber].every(square => square === player) ||false;
 }
 
 /*
@@ -28,7 +32,16 @@ function checkRow(board, player, rowNumber) {
     Return true if the player has made a move in all 3 squares in the column
     Otherwise, return false
 */
-function checkColumn(board, player, columnNumber) {
+export function checkColumn(board, player, columnNumber) {
+    if(columnNumber < 0 || columnNumber > 2) {
+        return false;
+    }
+    for(let i = 0; i < 3; i++) {
+        if(board[i][columnNumber] !== player) {
+            return false;
+        }
+    }
+    return true;    
 }
 
 /*
@@ -38,8 +51,20 @@ function checkColumn(board, player, columnNumber) {
     Return true if the player has made a move in 3 diagonal squares
     Otherwise, return false
 */
-function checkDiagonal(board, player) {
-    // It may be easier to use an if statement than a loop here
+export function checkDiagonal(board, player) {
+    let leftToRight = true;
+    let rightToLeft = true;
+
+    for(let i = 0; i < 3; i++) {
+        if(board[i][i] !== player) {
+            leftToRight = false;
+        }
+        if(board[i][2 - i] !== player) {
+            rightToLeft = false;
+        }
+    }
+
+    return leftToRight || rightToLeft;  
 }
 
 
@@ -47,7 +72,7 @@ function checkDiagonal(board, player) {
     There is no need to change any code below this line.
 */
 
-function checkIfPlayerWon(board, player) {
+export function checkIfPlayerWon(board, player) {
     for(let i = 0; i <= 2; i++) {
         if(checkRow(board, player, i) || checkColumn(board, player, i)) {
             return true;
@@ -79,3 +104,4 @@ export function isGameOver(board) {
 
     return false;
 }
+
