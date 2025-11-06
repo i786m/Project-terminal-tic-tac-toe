@@ -1,9 +1,11 @@
 # TIC-TAC-TOE in the terminal!
+
 This is a small project that can be worked on in a group of 3 people. Once completed, you will have a working version of tic-tac-toe which you can play right in your terminal!
 
 ![example](terminal-tic-tac-toe.gif)
 
 ## Instructions
+
 1. Select one person in the group (PersonA) to fork this repo.
 2. After this, the other 2 people in the group (PersonB and PersonC) can fork PersonA's repo (if this is confusing, see the diagram below).
 3. Now all 3 people can clone their fork.
@@ -20,3 +22,5 @@ This is a small project that can be worked on in a group of 3 people. Once compl
 10. After fixing any bugs, you should have a working version of tic-tac-toe running in your terminal :)
 
 ![forks](tic-tac-toe-forks.jpg)
+
+Contributors: (Alexandru)[https://github.com/alexandru-pocovnicu], (Adnaan)[https://github.com/AdnaanA], (Imran)[https://github.com/i786m]
