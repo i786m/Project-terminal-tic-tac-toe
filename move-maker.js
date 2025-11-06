@@ -15,10 +15,28 @@
             ['O', 'O', 'X']
         ];
 */
-function validateMove(move, board) {
-    // Implement this at the end if you have time, otherwise you can help your teammates!
+export function validateMove(move, board) {
+  let splitMove = move.split(",");
+  let row = Number(splitMove[0] - 1);
+  let column = Number(splitMove[1] - 1);
+
+  if (row < 0 || row > 2 || column < 0 || column > 2) {
+    console.log("Try again");
+    return false;
+  }
+  if (board[row][column] === "_") {
     return true;
+  }
+  // Implement this at the end if you have time, otherwise you can help your teammates!
+  console.log("Try again");
+  return false;
 }
+// console.log(validateMove(("2,3"),[
+//     ['X', '_', '_'],
+//     ['_', 'X', '_'],
+//     ['O', 'O', 'X']
+// ]
+// ));
 
 /*
     Given 3 parameters:
@@ -32,5 +50,15 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
+  if (!validateMove(move, board)) {
     return false;
+  } else {
+    let splitMove = move.split(",");
+    let row = Number(splitMove[0] - 1);
+    let column = Number(splitMove[1] - 1);
+    board[row][column] = player;
+    return true;
+  }
+
+  return false;
 }
